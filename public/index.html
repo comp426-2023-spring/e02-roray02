@@ -1,73 +1,63 @@
 <html>
     <head>
+        <meta charset="UTF-8">
         <title>Rohan Ray Final Project RPSLS</title>
         <!-- Link to your script file(s) and CSS in here somewhere -->
         <link rel="stylesheet" href="styles.css">
-        <script src="./scripts.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="scripts.js"></script>
         
     </head>
-    <body>
 
     <!-- Your interface markup goes here -->
     <!-- For interface examples, look in the `/examples/` directory in the root of your starter code repo. -->
-    <body>
+    <body onload="unhideOpts()">
         <h1>Rock Paper Scissors Lizard Spock</h1>
-        <form>
+        <form id="userinput" class="" action="javascript:void(0);">
             <fieldset>
                 <legend>Select Game Type:</legend>
                     <label>
-                        <input type="radio" name="game-type" value="rps">
+                        <input type="radio" id="rps" name="game-type" value="rps" checked onclick="unhideOpts()">
                         Rock Paper Scissors
                     </label>
                     <label>
-                        <input type="radio" name="game-type" value="rpsls">
+                        <input type="radio" id = "rpsls" name="game-type" value="rpsls" onclick="unhideOpts()">
                         Rock Paper Scissors Lizard Spock
                     </label>
             </fieldset>
             <fieldset>
-                <legend>Select Play Mode:</legend>
+                <legend>Play vs an Opponent?</legend>
                     <label>
-                        <input type="radio" name="play-mode" value="single">
-                        Single Player
+                        <input type="checkbox" id="opponent" name="play-mode" value="opponent" onclick="unhideOpts()">
+                        Yes
                     </label>
-                    <label>
-                        <input type="radio" name="play-mode" value="multi">
-                        Multiplayer
-                    </label>
-        </fieldset>
-        <fieldset>
-            <legend>Select Your Move:</legend>
-                <label>
-                    <input type="radio" name="move" value="rock">
-                    Rock
-                </label>
-                <label>
-                    <input type="radio" name="move" value="paper">
-                    Paper
-                </label>
-                <label>
-                    <input type="radio" name="move" value="scissors">
-                    Scissors
-                </label>
-                <label>
-                    <input type="radio" name="move" value="lizard">
-                    Lizard
-                </label>
-                <label>
-                    <input type="radio" name="move" value="spock">
-                    Spock
-                </label>
-        </fieldset>
-        <button type="submit">Start Game</button>
+            </fieldset>
+
+            <legend class = "move rps rpsls">Select Your Move:</legend>
+                <label class="move rps"><input type="radio" name="move" value="rock" class="move rps" checked>Rock<figure id="rockpic" class="move rps"> <img src="./img/rock.jpg" height="60" width="60"></figure></label>
+                <label class="move rps"><input type="radio" name="move" value="paper" class="move rps" checked>Paper<figure id="paperpic" class="move rps"> <img src="./img/paper.jpg" height="60" width="60"></figure></label>
+                <label class="move rps"><input type="radio" name="move" value="scissors" class="move rps" checked>Scissors<figure id="scissorspic" class="move rps"> <img src="./img/scissors.jpg" height="60" width="60"></figure></label>
+                <input type="radio" name="move" value="lizard" class="move rpsls"> <label class="move rpsls">Lizard</label>
+                <input type="radio" name="move" value="spock" class="move rpsls"> <label class="move rpsls">Spock</label>
+        <button type="submit" hidden>Submit</button>
         </form>
+
+        <button type="button" id="play" onclick="startGame()">Start Game</button>
+        <br><br>
+        <button type="button" id="clear" onclick="resetClear()">Restart Game</button>
+
         <div>
-        <button data-move="rock">Rock</button>
-        <button data-move="paper">Paper</button>
-        <button data-move="scissors">Scissors</button>
-        <button data-move="lizard">Lizard</button>
-        <button data-move="spock">Spock</button>
+            <div id="results"></div>
         </div>
-        <button>Play Again</button>
-        </body>
+        
+        <fieldset>
+            <legend>Rules</legend>
+                <button type="button" id="rules-btn" onclick="viewrules()">View Rules</button>
+                <div id="rules" hidden></div>
+                <br>
+                <button type="button" id="hide-rules-btn" onclick="hiderules()" hidden>Hide Rules</button>
+        </fieldset>
+
+        
     </body>
 </html>

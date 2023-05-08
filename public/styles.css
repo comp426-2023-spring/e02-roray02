@@ -69,7 +69,7 @@ input[type="radio"] {
     transform: scale(0.9);
 }
 
-#result {
+#results{
     font-size: 2em;
     margin-top: 2em;
 }
