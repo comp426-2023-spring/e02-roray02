@@ -54,8 +54,7 @@ async function startGame() {
             '\n\nResult: you ' + result.result.toUpperCase() +'\n';
     } else {
         $('#results').show();
-        document.getElementById("results").innerText = 'Your opponent: ' + result.opponent +
-            '\n\nResult: you ' + result.result.toUpperCase() +'\n';
+        document.getElementById("results").innerText = 'Your random draw is: ' + result.opponent;
     }
     console.log(url)
     console.log(result)
