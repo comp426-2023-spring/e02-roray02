@@ -1,12 +1,73 @@
 <html>
     <head>
-        <title>Rock</title>
+        <title>Rohan Ray Final Project RPSLS</title>
         <!-- Link to your script file(s) and CSS in here somewhere -->
+        <link rel="stylesheet" href="styles.css">
+        <script src="./scripts.js"></script>
+        
     </head>
     <body>
 
     <!-- Your interface markup goes here -->
     <!-- For interface examples, look in the `/examples/` directory in the root of your starter code repo. -->
-
+    <body>
+        <h1>Rock Paper Scissors Lizard Spock</h1>
+        <form>
+            <fieldset>
+                <legend>Select Game Type:</legend>
+                    <label>
+                        <input type="radio" name="game-type" value="rps">
+                        Rock Paper Scissors
+                    </label>
+                    <label>
+                        <input type="radio" name="game-type" value="rpsls">
+                        Rock Paper Scissors Lizard Spock
+                    </label>
+            </fieldset>
+            <fieldset>
+                <legend>Select Play Mode:</legend>
+                    <label>
+                        <input type="radio" name="play-mode" value="single">
+                        Single Player
+                    </label>
+                    <label>
+                        <input type="radio" name="play-mode" value="multi">
+                        Multiplayer
+                    </label>
+        </fieldset>
+        <fieldset>
+            <legend>Select Your Move:</legend>
+                <label>
+                    <input type="radio" name="move" value="rock">
+                    Rock
+                </label>
+                <label>
+                    <input type="radio" name="move" value="paper">
+                    Paper
+                </label>
+                <label>
+                    <input type="radio" name="move" value="scissors">
+                    Scissors
+                </label>
+                <label>
+                    <input type="radio" name="move" value="lizard">
+                    Lizard
+                </label>
+                <label>
+                    <input type="radio" name="move" value="spock">
+                    Spock
+                </label>
+        </fieldset>
+        <button type="submit">Start Game</button>
+        </form>
+        <div>
+        <button data-move="rock">Rock</button>
+        <button data-move="paper">Paper</button>
+        <button data-move="scissors">Scissors</button>
+        <button data-move="lizard">Lizard</button>
+        <button data-move="spock">Spock</button>
+        </div>
+        <button>Play Again</button>
+        </body>
     </body>
 </html>
